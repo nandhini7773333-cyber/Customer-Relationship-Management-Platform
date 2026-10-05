@@ -1,0 +1,139 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Management Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h2>CRM<span>Pro</span></h2>
+
+        <nav>
+            <a class="active">📊 Dashboard</a>
+            <a>👥 Customers</a>
+            <a>📈 Sales</a>
+            <a>📅 Follow-ups</a>
+            <a>⚙ Settings</a>
+        </nav>
+
+        <button id="darkModeBtn">🌙 Dark Mode</button>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <h1>Customer Dashboard</h1>
+                <p>Welcome to your CRM management system</p>
+            </div>
+
+            <button class="add-btn" onclick="openForm()">
+                + Add Customer
+            </button>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div>
+                    <p>Total Customers</p>
+                    <h2 id="totalCustomers">0</h2>
+                </div>
+                <div class="icon">👥</div>
+            </div>
+
+            <div class="stat-card">
+                <div>
+                    <p>Active Customers</p>
+                    <h2 id="activeCustomers">0</h2>
+                </div>
+                <div class="icon">🟢</div>
+            </div>
+
+            <div class="stat-card">
+                <div>
+                    <p>Potential Leads</p>
+                    <h2 id="leadCustomers">0</h2>
+                </div>
+                <div class="icon">🎯</div>
+            </div>
+
+            <div class="stat-card">
+                <div>
+                    <p>Total Value</p>
+                    <h2 id="totalValue">₹0</h2>
+                </div>
+                <div class="icon">💰</div>
+            </div>
+
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="customer-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Customer Management</h2>
+                    <p>Manage your customer relationships</p>
+                </div>
+
+                <div class="controls">
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="🔍 Search customer..."
+                        onkeyup="displayCustomers()"
+                    >
+
+                    <select id="statusFilter" onchange="displayCustomers()">
+                        <option value="All">All Status</option>
+                        <option value="Active">Active</option>
+                        <option value="Lead">Lead</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                            <th>Value</th>
+                            <th>Follow-up</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="customerTable">
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Sales Overview -->
+        <section class="sales-card">
+
+            <div>
+                <h2>Sales Overview</h2>
+                <p>Monthly customer value</p>
+            </div>
+
+            <div class="chart">
+
+                <div class="bar" style="height:45%">
+                    <span>Jan</span>
+                </div>
+```
